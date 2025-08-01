@@ -1,7 +1,11 @@
 import './globals.css'
-import { Inter } from 'next/font/google'
+import { JetBrains_Mono } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+const jetbrainsMono = JetBrains_Mono({ 
+  subsets: ['latin'],
+  variable: '--font-mono',
+  display: 'swap',
+})
 
 export const metadata = {
   title: 'Claude Code Project',
@@ -15,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${jetbrainsMono.variable} font-mono`}>{children}</body>
     </html>
   )
 }
